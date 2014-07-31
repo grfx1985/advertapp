@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @advert.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @advert.description %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @advert.name %>
+</p>
+
+<p>
+  <strong>Surname:</strong>
+  <%= @advert.surname %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @advert.email %>
+</p>
+
+<p>
+  <strong>Mobile:</strong>
+  <%= @advert.mobile %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @advert.date %>
+</p>
+
+<p>
+  <strong>Active:</strong>
+  <%= @advert.active %>
+</p>
+
+<%= link_to 'Edit', edit_advert_path(@advert) %> |
+<%= link_to 'Back', adverts_path %>
