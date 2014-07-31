@@ -35,6 +35,7 @@ gem 'paperclip'
 gem 'geocoder'
 gem 'rails_admin'
 gem 'will_paginate'
+gem 'email_validator'
 
 
 # Use ActiveModel has_secure_password

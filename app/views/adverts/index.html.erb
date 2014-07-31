@@ -51,8 +51,10 @@
     <div class="page_info">
       <%= page_entries_info @adverts %>
     </div>
+
     <%= will_paginate @adverts, :container => true %>
   </div>
+
 <%= link_to t('.new', :default => t("helpers.links.new")),
             new_advert_path,
             :class => 'btn btn-primary' %>
