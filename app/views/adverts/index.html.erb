@@ -10,6 +10,7 @@
       <th><%= model_class.human_attribute_name(:description) %></th>
       <th><%= model_class.human_attribute_name(:name) %></th>
       <th><%= model_class.human_attribute_name(:surname) %></th>
+      <th><%= model_class.human_attribute_name(:address) %></th>
       <th><%= model_class.human_attribute_name(:email) %></th>
       <th><%= model_class.human_attribute_name(:mobile) %></th>
       <th><%= model_class.human_attribute_name(:date) %></th>
@@ -26,13 +27,14 @@
         <td><%= advert.description %></td>
         <td><%= advert.name %></td>
         <td><%= advert.surname %></td>
+        <td><%= advert.address %></td>
         <td><%= advert.email %></td>
         <td><%= advert.mobile %></td>
         <td><%= advert.date %></td>
         <td><%= advert.active %></td>
         <td><%=l advert.created_at %></td>
-        <td>
-          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+        <td><%= image_tag "http://maps.google.com/maps/api/staticmap?size=300x300&sensor=true&zoom=14&markers=#{advert.latitude},#{advert.longitude}" %></td>
+          <td><%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_advert_path(advert), :class => 'btn btn-mini' %>
           <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
                       advert_path(advert),
