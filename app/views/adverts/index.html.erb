@@ -5,7 +5,7 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <th><%= model_class.human_attribute_name(:id) %></th>
+   
       <th><%= model_class.human_attribute_name(:title) %></th>
       <th><%= model_class.human_attribute_name(:description) %></th>
       <th><%= model_class.human_attribute_name(:name) %></th>
@@ -21,7 +21,7 @@
   <tbody>
     <% @adverts.each do |advert| %>
       <tr>
-        <td><%= link_to advert.id, advert_path(advert) %></td>
+        
         <td><%= advert.title %></td>
         <td><%= advert.description %></td>
         <td><%= advert.name %></td>
@@ -44,7 +44,12 @@
     <% end %>
   </tbody>
 </table>
-
+<div class="apple_pagination">
+    <div class="page_info">
+      <%= page_entries_info @adverts %>
+    </div>
+    <%= will_paginate @adverts, :container => true %>
+  </div>
 <%= link_to t('.new', :default => t("helpers.links.new")),
             new_advert_path,
             :class => 'btn btn-primary' %>
