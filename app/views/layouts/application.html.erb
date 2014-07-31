@@ -52,6 +52,8 @@
               <li><%= link_to "Link1", "/path1"  %></li>
               <li><%= link_to "Link2", "/path2"  %></li>
               <li><%= link_to "Link3", "/path3"  %></li>
+              <li><%= link_to t('.log_out', :default => t("helpers.links.log_out")),
+             destroy_admin_session_path, method: 'delete'%></li>
             </ul>
           </div><!--/.nav-collapse -->
         </div>

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :admins
   resources :adverts
 root to: 'adverts#index'
   # The priority is based upon order of creation: first created -> highest priority.
