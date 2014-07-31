@@ -1,44 +1,35 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = Advert -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
+</div>
 
-<p>
-  <strong>Title:</strong>
-  <%= @advert.title %>
-</p>
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:title) %>:</strong></dt>
+  <dd><%= @advert.title %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:description) %>:</strong></dt>
+  <dd><%= @advert.description %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:name) %>:</strong></dt>
+  <dd><%= @advert.name %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:surname) %>:</strong></dt>
+  <dd><%= @advert.surname %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:email) %>:</strong></dt>
+  <dd><%= @advert.email %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:mobile) %>:</strong></dt>
+  <dd><%= @advert.mobile %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:date) %>:</strong></dt>
+  <dd><%= @advert.date %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:active) %>:</strong></dt>
+  <dd><%= @advert.active %></dd>
+</dl>
 
-<p>
-  <strong>Description:</strong>
-  <%= @advert.description %>
-</p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @advert.name %>
-</p>
-
-<p>
-  <strong>Surname:</strong>
-  <%= @advert.surname %>
-</p>
-
-<p>
-  <strong>Email:</strong>
-  <%= @advert.email %>
-</p>
-
-<p>
-  <strong>Mobile:</strong>
-  <%= @advert.mobile %>
-</p>
-
-<p>
-  <strong>Date:</strong>
-  <%= @advert.date %>
-</p>
-
-<p>
-  <strong>Active:</strong>
-  <%= @advert.active %>
-</p>
-
-<%= link_to 'Edit', edit_advert_path(@advert) %> |
-<%= link_to 'Back', adverts_path %>
+<div class="form-actions">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              adverts_path, :class => 'btn'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_advert_path(@advert), :class => 'btn' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              advert_path(@advert),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>

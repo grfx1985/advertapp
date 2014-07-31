@@ -34,6 +34,7 @@ gem 'devise'
 gem 'paperclip'
 gem 'geocoder'
 gem 'rails_admin'
+gem 'will_paginate'
 
 
 # Use ActiveModel has_secure_password
