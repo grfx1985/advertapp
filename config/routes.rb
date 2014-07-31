@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   devise_for :admins
   resources :adverts
-root to: 'adverts#index'
+  get '/' => 'adverts#index'
+  root to: 'adverts#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

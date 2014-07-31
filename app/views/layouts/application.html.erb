@@ -46,14 +46,14 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
                       </a>
-          <a class="brand" href="#">Adverter</a>
+          <a  href="/" class="btn btn-info btn-large"> Adverter <i class="icon-smile"> </i></a>
           <div class="container-fluid nav-collapse">
             <ul class="nav">
-              <li><%= link_to "Link1", "/path1"  %></li>
-              <li><%= link_to "Link2", "/path2"  %></li>
-              <li><%= link_to "Link3", "/path3"  %></li>
-              <li><%= link_to t('.log_out', :default => t("helpers.links.log_out")),
-             destroy_admin_session_path, method: 'delete'%></li>
+              <li><%= link_to("Link1",root_path, method: 'get', :class => ["btn btn-info btn-mini","icon-rocket"]) %></li>
+              <li><%= link_to("Link2",root_path, method: 'get', :class => ["btn btn-info btn-mini","icon-rocket"]) %></li>
+              <li><%= link_to("Link3",root_path, method: 'get', :class => ["btn btn-info btn-mini","icon-rocket"]) %></li>
+              <li><%= link_to("Log Out",destroy_admin_session_path, method: 'delete', :class => ["btn btn-info btn-mini","icon-warning-sign"]) %></li>
+              <br>
             </ul>
           </div><!--/.nav-collapse -->
         </div>
@@ -67,24 +67,25 @@
           <div class="well sidebar-nav">
             <ul class="nav nav-list">
 
-              <div><a
+              <br><a
    class="btn btn-facebook"
    href="http://www.facebook.com/sharer.php?u=_URL_"
 >
    <i class="fa fa-facebook"></i> | Share 
-</a></div>
- <div><a
+</a></br>
+ <br><a
    class="btn btn-twitter"
    href="http://twitter.com/share?url=_URL_&text=Posted an Advert on this page!&via=TWITTER_NAME"
 >
    <i class="fa fa-twitter"></i> | Share 
-</a></div>
-<div><a
+</a></br>
+<br><a
    class="btn btn-linkedin"
    href="http://www.linkedin.com/shareArticle?url=_URL_"
 >
    <i class="fa fa-linkedin"> | Share</i>
-</a></div>
+</a></br>
+<br>
           </div><!--/.well -->
         </div><!--/span-->
         <div class="span9">
