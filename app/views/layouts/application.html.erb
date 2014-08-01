@@ -49,9 +49,10 @@
           <a  href="/" class="btn btn-info btn-large"> Adverter <i class="icon-barcode"> </i></a>
           <div class="container-fluid nav-collapse">
             <ul class="nav">
-        <li><%= link_to("Password reset",new_admin_password_path, method: 'get', :class => ["btn btn-info btn","icon-rocket"]) %></li>
+        <li><%= link_to("Forgot Password?",new_admin_password_path, method: 'get', :class => ["btn btn-info btn","icon-rocket"]) %></li>
               <li><%= link_to("Sign in",new_admin_session_path, method: 'get', :class => ["btn btn-info btn","icon-rocket"]) %></li>
               <li><%= link_to("Sign Up",new_admin_registration_path, method: 'get', :class => ["btn btn-info btn","icon-rocket"]) %></li>
+              <li><%= link_to("Edit Account",edit_admin_registration_path, method: 'get', :class => ["btn btn-info btn","icon-rocket"]) %></li>
               <li><%= link_to("Log Out",destroy_admin_session_path, method: 'delete', :class => ["btn btn-info btn","icon-off"]) %></li>
               <br>
             </ul>
