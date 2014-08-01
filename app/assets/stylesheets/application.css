@@ -64,41 +64,12 @@
   font-size:5em;
   text-shadow:0px 0px 5px #666,0px 0px 30px #DDD;
   
-  
 }
 body
 {
-  background:url('http://subtlepatterns.com/patterns/nasty_fabric.png');
+  background:url('http://subtlepatterns.com/patterns/honey_im_subtle.png');
   background-size:200px;
 }
-.zocial-facebook:hover, .zocial-twitter:hover, .zocial-googleplus:hover, .zocial-windows:hover, .zocial-appstore:hover, .zocial-android:hover
-{
-  color:#777;
-  transition:all ease 0.5s;
-  
-}
-.zocial-facebook, .zocial-twitter, .zocial-googleplus
-{
-  position:relative;
-  top:130px;
-  margin-left:60px;
-  color:#EEE;
-  transition:all ease 0.5s;
-  
-}
-.zocial-twitter
-{
-  margin-left:90px
-}
-.zocial-windows, .zocial-appstore, .zocial-android
-{
-  position:relative;
-  top:50px;
-  margin-left:70px;
-  color:#EEE;
-  transition:all ease 0.5s;
-}
-
 #cadre
 {
   width:500px;
