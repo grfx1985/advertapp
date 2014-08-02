@@ -27,7 +27,7 @@ class AdvertsController < ApplicationController
   # POST /adverts
   # POST /adverts.json
   def create
-    @advert = Advert.create( advert_params )
+    @advert = current_admin.adverts.create( advert_params )
 
     respond_to do |format|
       if @advert.save
