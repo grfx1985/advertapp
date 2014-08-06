@@ -10,60 +10,58 @@
     <div class="controls">
       <%= f.text_area :description, :class => 'text_area' %>
     </div>
-      <div class="control-group">
-    <%= f.label :image, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.file_field :image, :class => 'text_field' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :name, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :name, :class => 'text_field' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :surname, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :surname, :class => 'text_field' %>
-    </div>
-  </div>
     <div class="control-group">
-    <%= f.label :address, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :address, :class => 'text_field' %>
+      <%= f.label :image, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.file_field :image, :class => 'text_field' %>
+      </div>
     </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :email, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :email, :class => 'text_field' %>
+    <div class="control-group">
+      <%= f.label :name, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :name, :class => 'text_field' %>
+      </div>
     </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :mobile, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :mobile, :class => 'text_field' %>
+    <div class="control-group">
+      <%= f.label :surname, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :surname, :class => 'text_field' %>
+      </div>
     </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :date, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.date_select :date, :class => 'date_select' %>
+    <div class="control-group">
+      <%= f.label :address, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :address, :class => 'text_field' %>
+      </div>
     </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :active, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.check_box :active, :class => 'check_box' %>
+    <div class="control-group">
+      <%= f.label :email, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :email, :class => 'text_field' %>
+      </div>
     </div>
-  </div>
-  
-  <br><%= image_tag "http://maps.google.com/maps/api/staticmap?size=1900x1000&sensor=true&zoom=14&markers=#{@advert.latitude},#{@advert.longitude}" %></br>
+    <div class="control-group">
+      <%= f.label :mobile, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :mobile, :class => 'text_field' %>
+      </div>
+    </div>
+    <div class="control-group">
+      <%= f.label :date, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.date_select :date, :class => 'date_select' %>
+      </div>
+    </div>
+    <div class="control-group">
+      <%= f.label :active, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.check_box :active, :class => 'check_box' %>
+      </div>
+    </div>
+    <br><%= image_tag "http://maps.google.com/maps/api/staticmap?size=1900x1000&sensor=true&zoom=14&markers=#{@advert.latitude},#{@advert.longitude}" %></br>
   <div class="form-actions">
     <%= f.submit nil, :class => 'btn btn-primary' %>
     <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
                 adverts_path, :class => 'btn btn-info' %>
   </div>
-
 <% end %>
