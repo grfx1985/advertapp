@@ -1,9 +1,11 @@
 class AdvertsController < ApplicationController
   before_action :authenticate_admin! , only: [:new ,:edit, :update, :destroy]
-  before_action :set_advert, only: [:show, :edit, :update, :destroy]
+  before_action :set_advert, only: [:show, :edit, :update, :destroy,]
+  http_basic_authenticate_with name: "Master", password: "secret", only: :moderate
 
+def moderate
 
-
+end
   # GET /adverts
   # GET /adverts.json
   def index

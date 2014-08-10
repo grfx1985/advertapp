@@ -7,8 +7,7 @@
             new_advert_path,
             :class => ['btn btn-large btn-primary' , "icon-cogs"] %></p>
   <thead>
-    <tr>
-   
+      <tr>
       <th><%= model_class.human_attribute_name(:title) %></th>
       <th><%= model_class.human_attribute_name(:description) %></th>
       <th><%= model_class.human_attribute_name(:name) %></th>
@@ -21,7 +20,7 @@
       <th><%= model_class.human_attribute_name(:created_at) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
-  </thead>
+    </thead>
   <tbody>
     <% @adverts.each do |advert| %>
       <tr>
@@ -37,15 +36,15 @@
         <td><%= advert.active %></td>
         <td><%=l advert.created_at %></td>
         <td><%= image_tag "http://maps.google.com/maps/api/staticmap?size=300x300&sensor=true&zoom=14&markers=#{advert.latitude},#{advert.longitude}" %></td>
-       <td><br><%= link_to("Show",advert, method: 'get', :class => ["btn btn-info btn-mini"]) %></br></td>td>
+        <td><br><%= link_to("Show",advert, method: 'get', :class => ["btn btn-info btn-mini"]) %></br>
         <% if is_my_advert?(advert) %>
-        <td><br><%= link_to t('.edit', :default => t("helpers.links.edit")),
+        <br><%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_advert_path(advert), :class => ['btn btn-success btn-mini'] %></br>
-          <br><%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+        <br><%= link_to t('.destroy', :default => t("helpers.links.destroy")),
                       advert_path(advert),
                       :method => :delete,
                       :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-                      :class => ['btn btn-mini btn-danger'] %></br>
+                      :class => ['btn btn-mini btn-danger'] %></br></td>
      
         </td>
         <% end %>
