@@ -1,6 +1,6 @@
 class AdvertsController < ApplicationController
   before_action :authenticate_admin! , only: [:new ,:edit, :update, :destroy]
-  before_action :set_advert, only: [:show, :edit, :update, :destroy,]
+  before_action :set_advert, only: [:show, :edit, :update, :destroy]
   http_basic_authenticate_with name: "Master", password: "secret", only: :moderate
 
 def moderate
@@ -73,6 +73,6 @@ end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def advert_params
-      params.require(:advert).permit(:title, :description, :name, :surname, :email, :mobile, :date, :active, :address, :image)
+      params.require(:advert).permit(:title, :description, :name, :surname, :email, :mobile, :date, :active, :address, :image, comments_attributes: [:name,:content,:advert_id,:_destroy])
     end
 end

@@ -58,7 +58,7 @@
         <%= f.check_box :active, :class => 'check_box' %>
       </div>
     </div>
-    <br><%= image_tag "http://maps.google.com/maps/api/staticmap?size=1900x1000&sensor=true&zoom=14&markers=#{@advert.latitude},#{@advert.longitude}" %></br>
+        <br><%= image_tag "http://maps.google.com/maps/api/staticmap?size=1900x1000&sensor=true&zoom=14&markers=#{@advert.latitude},#{@advert.longitude}" %></br>
   <div class="form-actions">
     <%= f.submit nil, :class => 'btn btn-primary' %>
     <%= link_to t('.cancel', :default => t("helpers.links.cancel")),

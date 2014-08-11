@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140802142319) do
+ActiveRecord::Schema.define(version: 20140811110213) do
 
   create_table "admins", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -53,5 +53,15 @@ ActiveRecord::Schema.define(version: 20140802142319) do
   end
 
   add_index "adverts", ["admin_id"], name: "index_adverts_on_admin_id"
+
+  create_table "comments", force: true do |t|
+    t.text     "content"
+    t.integer  "advert_id"
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "comments", ["advert_id"], name: "index_comments_on_advert_id"
 
 end

@@ -4,6 +4,15 @@ RailsAdmin.config do |config|
 Kaminari.configure do |config|
 config.page_method_name = :per_page_kaminari
 end
+
+
+config.authenticate_with do
+    authenticate_or_request_with_http_basic do |username, password|
+      username == 'user' &&
+      password == 'password'
+    end
+  end
+
   ### Popular gems integration
 
   ## == Devise ==

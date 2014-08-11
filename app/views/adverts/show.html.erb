@@ -24,6 +24,11 @@
   <dd><%= @advert.date %></dd>
   <dt><strong><%= model_class.human_attribute_name(:active) %>:</strong></dt>
   <dd><%= @advert.active %></dd>
+   <dt><strong><%= model_class.human_attribute_name(:comment) %>:</strong></dt>
+  <dd><% @advert.comments.each do |comment| %>
+ <%= comment.content %> (<%= comment.name %>)<br />
+<% end %>
+  </dd>
 </dl>
 <%= image_tag "http://maps.google.com/maps/api/staticmap?size=1900x1000&sensor=true&zoom=14&markers=#{@advert.latitude},#{@advert.longitude}" %>
 <div class="form-actions">

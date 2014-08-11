@@ -40,20 +40,26 @@
 
     <div class="navbar navbar ">
       <div class="navbar-inner">
-        <div class="container-fluid">
+        <div class="container-fluid best_gradient">
           <a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse">
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
                       </a>
-          <a  href="/" class="btn btn-info btn-large"> Adverter <i class="icon-barcode"> </i></a>
+          <a  href="/" class="btn btn-large"> Adverter <i class="icon-barcode"> </i></a>
           <div class="container-fluid nav-collapse">
             <ul class="nav">
+
+            <% if admin_signed_in? %>
+                            <li><%= link_to("Edit Account",edit_admin_registration_path, method: 'get', :class => ["btn btn-info btn","icon-rocket"]) %></li>
+              <li><%= link_to("Log Out",destroy_admin_session_path, method: 'delete', :class => ["btn btn-info btn","icon-off"]) %></li>
+            <% else %>
         <li><%= link_to("Forgot Password?",new_admin_password_path, method: 'get', :class => ["btn btn-info btn","icon-rocket"]) %></li>
               <li><%= link_to("Sign in",new_admin_session_path, method: 'get', :class => ["btn btn-info btn","icon-rocket"]) %></li>
               <li><%= link_to("Sign Up",new_admin_registration_path, method: 'get', :class => ["btn btn-info btn","icon-rocket"]) %></li>
-              <li><%= link_to("Edit Account",edit_admin_registration_path, method: 'get', :class => ["btn btn-info btn","icon-rocket"]) %></li>
-              <li><%= link_to("Log Out",destroy_admin_session_path, method: 'delete', :class => ["btn btn-info btn","icon-off"]) %></li>
+            <% end %>
+
+
               <br>
             </ul>
           </div><!--/.nav-collapse -->
@@ -64,32 +70,27 @@
 <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
     <div class="container-fluid">
       <div class="row-fluid">
-        <div class="span2">
-          <div class="well sidebar-nav">
             <ul class="nav nav-list">
 
-              <br><a
+              <a
    class="btn btn-facebook"
    href="http://www.facebook.com/sharer.php?u=_URL_"
 >
-   <i class="fa fa-facebook"></i> | Share 
-</a></br>
- <br><a
+   <i class="fa fa-facebook"></i>   Share 
+</a>
+ <a
    class="btn btn-twitter"
    href="http://twitter.com/share?url=_URL_&text=Posted an Advert on this page!&via=TWITTER_NAME"
 >
-   <i class="fa fa-twitter"></i> | Share 
-</a></br>
-<br><a
+   <i class="fa fa-twitter"></i>  Share</a>
+<a
    class="btn btn-linkedin"
    href="http://www.linkedin.com/shareArticle?url=_URL_"
 >
-   <i class="fa fa-linkedin"> | Share</i>
-</a></br>
+   <i class="fa fa-linkedin"> Share</i>
+</a>
 <br>
-          </div><!--/.well -->
-        </div><!--/span-->
-        <div class="span9">
+          <div class="span9">
           <%= bootstrap_flash %>
           <%= yield %>
         </div>
@@ -98,7 +99,7 @@
 
 
       <footer>
-      <p><a  href="/admins/moderate" class="btn btn-info btn-large"> grfx 2k14 <i class="icon-spinner icon-spin"> </i></a></p>
+      <p><a  href="/admins/moderate" class="btn btn-large"> grfx 2k14</a></p>
       </footer>
     </div> <!-- /container -->
   </body>

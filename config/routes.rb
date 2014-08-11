@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
+  resources :comments
+
  mount RailsAdmin::Engine => '/admins/moderate', as: 'rails_admin'
   devise_for :admins
-  resources :adverts
-  get 'admins/moderate' => 'adverts#moderate'
+  resources :adverts 
+
   get '/' => 'adverts#index'
   root to: 'adverts#index'
   # The priority is based upon order of creation: first created -> highest priority.
