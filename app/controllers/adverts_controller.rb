@@ -4,7 +4,6 @@ class AdvertsController < ApplicationController
   http_basic_authenticate_with name: "Master", password: "secret", only: :moderate
 
 def moderate
-
 end
   # GET /adverts
   # GET /adverts.json
