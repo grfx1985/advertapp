@@ -8,15 +8,10 @@ Rails.application.routes.draw do
       get 'active'
       get 'inactive'
       get 'job_hunt'
-      get 'job_hunt_in'
-      get 'buy_sell'
-      get 'buy_in'
+      get 'buy'
       get 'sell'
-      get 'sell_in'
       get 'hire'
-      get 'hire_in'
       get 'exchange'
-      get 'exchange_in'
     end
   end
   resources :admins 
