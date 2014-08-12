@@ -37,6 +37,7 @@ gem 'rails_admin'
 gem 'will_paginate'
 gem 'email_validator'
 gem 'cancancan'
+gem 'faker'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

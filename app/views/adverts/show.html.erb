@@ -15,21 +15,16 @@
  <br><%= image_tag @advert.image.url(:medium) %></br>
  <br><%= link_to 'Original Image' , @advert.image.url %></br></div>
 
-
-
  <div><br><dt><strong><%= model_class.human_attribute_name(:image1) %>:</strong></dt></br>
  <br><%= image_tag @advert.image1.url(:medium) %></br>
  <br><%= link_to 'Original Image' , @advert.image1.url %></br></div>
 
-
  <div><br><dt><strong><%= model_class.human_attribute_name(:image2) %>:</strong></dt></br>
  <br><%= image_tag @advert.image2.url(:medium) %></br>
  <br><%= link_to 'Original Image' , @advert.image2.url %></br></div>
-
  <div><br><dt><strong><%= model_class.human_attribute_name(:image3) %>:</strong></dt></br>
  <br><%= image_tag @advert.image3.url(:medium) %></br>
  <br><%= link_to 'Original Image' , @advert.image3.url %></br></div>
-
   <br><dt><strong><%= model_class.human_attribute_name(:job_hunt) %>:</strong></dt>
   <dd><%= @advert.job_hunt %></dd>
  <dt><strong><%= model_class.human_attribute_name(:hire) %>:</strong></dt>
@@ -50,8 +45,7 @@
   <dd><%= @advert.email %></dd>
   <dt><strong><%= model_class.human_attribute_name(:mobile) %>:</strong></dt>
   <dd><%= @advert.mobile %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:date) %>:</strong></dt>
-  <dd><%= @advert.date %></dd>
+
    <dt><strong><%= model_class.human_attribute_name(:comment) %>:</strong></dt>
   <dd><% @advert.comments.each do |comment| %>
  <%= comment.content %> (<%= comment.name %>)<br />

@@ -12,13 +12,13 @@ class Advert < ActiveRecord::Base
   validates :email, :email => true
   geocoded_by :address   # can also be an IP address
   after_validation :geocode          # auto-fetch coordinates
-  has_attached_file :image, :styles => { :medium => "700x700>", :thumb => "100x100>" }, :default_url => "/images/:style/missing.png"
+  has_attached_file :image, :styles => { :medium => "700x700>", :thumb => "100x100>" }, :default_url => "http://icons.iconarchive.com/icons/oxygen-icons.org/oxygen/96/Status-image-missing-icon.png"
   validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
-  has_attached_file :image1, :styles => { :medium => "700x700>", :thumb => "100x100>" }, :default_url => "/images/:style/missing.png"
+  has_attached_file :image1, :styles => { :medium => "700x700>", :thumb => "100x100>" }, :default_url => "http://icons.iconarchive.com/icons/oxygen-icons.org/oxygen/96/Status-image-missing-icon.png"
   validates_attachment_content_type :image1, :content_type => /\Aimage\/.*\Z/
-  has_attached_file :image2, :styles => { :medium => "700x700>", :thumb => "100x100>" }, :default_url => "/images/:style/missing.png"
+  has_attached_file :image2, :styles => { :medium => "700x700>", :thumb => "100x100>" }, :default_url => "http://icons.iconarchive.com/icons/oxygen-icons.org/oxygen/96/Status-image-missing-icon.png"
   validates_attachment_content_type :image2, :content_type => /\Aimage\/.*\Z/
-  has_attached_file :image3, :styles => { :medium => "700x700>", :thumb => "100x100>" }, :default_url => "/images/:style/missing.png"
+  has_attached_file :image3, :styles => { :medium => "700x700>", :thumb => "100x100>" }, :default_url => "http://icons.iconarchive.com/icons/oxygen-icons.org/oxygen/96/Status-image-missing-icon.png"
   validates_attachment_content_type :image3, :content_type => /\Aimage\/.*\Z/
   belongs_to :admin
   has_many :comments, dependent: :destroy

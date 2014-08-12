@@ -78,12 +78,7 @@
         <%= f.text_field :mobile, :class => 'text_field' %>
       </div>
     </div>
-    <div class="control-group">
-      <%= f.label :date, :class => 'control-label' %>
-      <div class="controls">
-        <%= f.date_select :date, :class => 'date_select' %>
-      </div>
-    </div>
+
 
         <br><%= image_tag "http://maps.google.com/maps/api/staticmap?size=1900x1000&sensor=true&zoom=14&markers=#{@advert.latitude},#{@advert.longitude}" %></br>
   <div class="form-actions">
