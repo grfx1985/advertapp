@@ -10,9 +10,10 @@
   <dd><%= @advert.description %></dd>
     <dt><strong><%= model_class.human_attribute_name(:active) %>:</strong></dt>
   <dd><%= @advert.active %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:image) %>:</strong></dt>
+  <br><dt><strong><%= model_class.human_attribute_name(:image) %>:</strong></dt></br>
  <br><%= image_tag @advert.image.url(:medium) %></br>
- <dt><strong><%= model_class.human_attribute_name(:job_hunt) %>:</strong></dt>
+ <br><%= link_to 'Original Image' , @advert.image.url %></br>
+ <br><dt><strong><%= model_class.human_attribute_name(:job_hunt) %>:</strong></dt>
   <dd><%= @advert.job_hunt %></dd>
  <dt><strong><%= model_class.human_attribute_name(:hire) %>:</strong></dt>
   <dd><%= @advert.hire %></dd>
