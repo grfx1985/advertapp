@@ -48,7 +48,7 @@
                       </a>
           <a  href="/" class="btn btn-large"> Adverter <i class="icon-barcode"> </i></a>
           <div class="container-fluid nav-collapse">
-            <ul class="nav">
+                      <ul class="nav">
 
             <% if admin_signed_in? %>
                             <li><%= link_to("Edit Account",edit_admin_registration_path, method: 'get', :class => ["btn btn-info btn","icon-rocket"]) %></li>
@@ -58,11 +58,24 @@
               <li><%= link_to("Sign in",new_admin_session_path, method: 'get', :class => ["btn btn-info btn","icon-rocket"]) %></li>
               <li><%= link_to("Sign Up",new_admin_registration_path, method: 'get', :class => ["btn btn-info btn","icon-rocket"]) %></li>
             <% end %>
-
-
-              <br>
-            </ul>
-          </div><!--/.nav-collapse -->
+  <div class="btn-group"></div>
+  <div class="btn-group","container-fluid nav-collapse">
+  <a href="/adverts/active"  type="button" class="btn btn-default">Active Adverts</a>
+  <a href="/adverts/inactive" type="button" class="btn btn-default">Inactive Adverts</a><br>
+  <div class="btn-group"><button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+      Choose Advert Category:
+    <span class="caret"></span>
+    </button>
+  <ul class="dropdown-menu" role="menu">
+    <li><a href="/adverts/job_hunt">Job Hunt</a></li>
+    <li><a href="/adverts/hire">Hire</a></li>
+    <li><a href="/adverts/buy">Buy</a></li>
+    <li><a href="/adverts/sell">Sell</a></li>
+    <li><a href="/adverts/exchange">Exchange</a></li>
+    </ul></div>
+  </div>
+</div>
+</div>
         </div>
       </div>
     </div>
@@ -90,6 +103,7 @@
    <i class="fa fa-linkedin"> Share</i>
 </a>
 <br>
+
           <div class="span9">
           <%= bootstrap_flash %>
           <%= yield %>
