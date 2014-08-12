@@ -1,16 +1,11 @@
 class Advert < ActiveRecord::Base
 scope :active, -> {where active: true } 
 scope :inactive, -> {where active: false } 
-scope :job_hunt, -> {where active: true } 
-scope :job_hunt_in, -> {where active: false } 
-scope :buy, -> {where active: true } 
-scope :buy_in, -> {where active: false }
-scope :sell, -> {where active: true }
-scope :sell_in, -> {where active: false } 
-scope :hire, -> {where active: true }
-scope :hire_in, -> {where active: false }
-scope :exchange, -> {where active: true } 
-scope :exchange_in, -> {where active: false }  
+scope :job_hunt, -> {where job_hunt: true } 
+scope :buy, -> {where buy: true } 
+scope :sell, -> {where sell: true }
+scope :hire, -> {where hire: true }
+scope :exchange, -> {where exchange: true } 
 validates :email, presence: true 
 validates :title, :name, :surname, :address, :mobile, presence: true
 validates :description , length: { minimum: 10 }
@@ -22,5 +17,6 @@ validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
 belongs_to :admin
 has_many :comments, dependent: :destroy
 accepts_nested_attributes_for :comments
+
 
 end

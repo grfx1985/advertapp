@@ -8,8 +8,20 @@
   <dd><%= @advert.title %></dd>
   <dt><strong><%= model_class.human_attribute_name(:description) %>:</strong></dt>
   <dd><%= @advert.description %></dd>
+    <dt><strong><%= model_class.human_attribute_name(:active) %>:</strong></dt>
+  <dd><%= @advert.active %></dd>
   <dt><strong><%= model_class.human_attribute_name(:image) %>:</strong></dt>
-  <br><%= image_tag @advert.image.url %></br>
+ <br><%= image_tag @advert.image.url %></br>
+ <dt><strong><%= model_class.human_attribute_name(:job_hunt) %>:</strong></dt>
+  <dd><%= @advert.job_hunt %></dd>
+ <dt><strong><%= model_class.human_attribute_name(:hire) %>:</strong></dt>
+  <dd><%= @advert.hire %></dd>
+ <dt><strong><%= model_class.human_attribute_name(:buy) %>:</strong></dt>
+  <dd><%= @advert.buy %></dd>
+ <dt><strong><%= model_class.human_attribute_name(:sell) %>:</strong></dt>
+  <dd><%= @advert.sell %></dd>
+ <dt><strong><%= model_class.human_attribute_name(:exchange) %>:</strong></dt>
+  <dd><%= @advert.exchange %></dd>
   <dt><strong><%= model_class.human_attribute_name(:name) %>:</strong></dt>
   <dd><%= @advert.name %></dd>
   <dt><strong><%= model_class.human_attribute_name(:surname) %>:</strong></dt>
@@ -22,14 +34,13 @@
   <dd><%= @advert.mobile %></dd>
   <dt><strong><%= model_class.human_attribute_name(:date) %>:</strong></dt>
   <dd><%= @advert.date %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:active) %>:</strong></dt>
-  <dd><%= @advert.active %></dd>
    <dt><strong><%= model_class.human_attribute_name(:comment) %>:</strong></dt>
   <dd><% @advert.comments.each do |comment| %>
  <%= comment.content %> (<%= comment.name %>)<br />
 <% end %>
   </dd>
 </dl>
+<%= render partial: 'comments/form', locals: {comment: Comment.new(advert_id: @advert.id)} %>
 <%= image_tag "http://maps.google.com/maps/api/staticmap?size=1900x1000&sensor=true&zoom=14&markers=#{@advert.latitude},#{@advert.longitude}" %>
 <div class="form-actions">
   <%= link_to t('.back', :default => t("helpers.links.back")),
@@ -47,4 +58,3 @@
 </div> 
 
 
-<%= render partial: 'comments/form', locals: {comment: Comment.new(advert_id: @advert.id)} %>

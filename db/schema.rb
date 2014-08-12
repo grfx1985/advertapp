@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140811110213) do
+ActiveRecord::Schema.define(version: 20140812065059) do
 
   create_table "admins", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -50,6 +50,11 @@ ActiveRecord::Schema.define(version: 20140811110213) do
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
     t.integer  "admin_id"
+    t.boolean  "job_hunt"
+    t.boolean  "buy"
+    t.boolean  "sell"
+    t.boolean  "hire"
+    t.boolean  "exchange"
   end
 
   add_index "adverts", ["admin_id"], name: "index_adverts_on_admin_id"

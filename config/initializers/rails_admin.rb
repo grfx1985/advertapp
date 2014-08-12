@@ -8,8 +8,8 @@ end
 
 config.authenticate_with do
     authenticate_or_request_with_http_basic do |username, password|
-      username == 'user' &&
-      password == 'password'
+      username == 'Master' &&
+      password == 'hakunamatata'
     end
   end
 

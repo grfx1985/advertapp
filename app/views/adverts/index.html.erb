@@ -10,13 +10,13 @@
       <tr>
       <th><%= model_class.human_attribute_name(:title) %></th>
       <th><%= model_class.human_attribute_name(:description) %></th>
+      <th><%= model_class.human_attribute_name(:active) %></th>
       <th><%= model_class.human_attribute_name(:name) %></th>
       <th><%= model_class.human_attribute_name(:surname) %></th>
       <th><%= model_class.human_attribute_name(:address) %></th>
       <th><%= model_class.human_attribute_name(:email) %></th>
       <th><%= model_class.human_attribute_name(:mobile) %></th>
       <th><%= model_class.human_attribute_name(:date) %></th>
-      <th><%= model_class.human_attribute_name(:active) %></th>
       <th><%= model_class.human_attribute_name(:created_at) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
       <th>Options:</th>
@@ -28,14 +28,14 @@
         
         <td><%= advert.title %></td>
         <td><%= advert.description %></td>
+        <td><%= advert.active %></td>
         <td><%= advert.name %></td>
         <td><%= advert.surname %></td>
         <td><%= advert.address %></td>
         <td><%= advert.email %></td>
         <td><%= advert.mobile %></td>
         <td><%= advert.date %></td>
-        <td><%= advert.active %></td>
-        <td><%=l advert.created_at %></td>
+                <td><%=l advert.created_at %></td>
         <td><%= image_tag "http://maps.google.com/maps/api/staticmap?size=300x300&sensor=true&zoom=14&markers=#{advert.latitude},#{advert.longitude}" %></td>
         <td><br><%= link_to("Show",advert, method: 'get', :class => ["btn btn-info btn-mini"]) %></br>
         <% if is_my_advert?(advert) %>
@@ -57,8 +57,7 @@
 </table>
 <div class="digg_pagination">
     <div class="page_info">
-    <%= page_entries_info @adverts %>
+      <%= page_entries_info @adverts %>
     </div>
     <%= will_paginate @adverts, :container => false %>
   </div>
-

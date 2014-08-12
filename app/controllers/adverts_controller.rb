@@ -3,51 +3,31 @@ class AdvertsController < ApplicationController
   before_action :set_advert, only: [:show, :edit, :update, :destroy]
   
 def active 
-@adverts = Advert.active
+@adverts = Advert.active.paginate(:page => params[:page], :per_page => 5)
 render  :index 
 end
 def inactive 
-@adverts = Advert.inactive
+@adverts = Advert.inactive.paginate(:page => params[:page], :per_page => 5)
 render  :index 
 end
 def job_hunt 
-@adverts = Advert.active
-render  :index 
-end
-def job_hunt_in 
-@adverts = Advert.inactive
+@adverts = Advert.job_hunt.paginate(:page => params[:page], :per_page => 5)
 render  :index 
 end
 def buy 
-@adverts = Advert.active
-render  :index 
-end
-def buy_in 
-@adverts = Advert.inactive
+@adverts = Advert.buy.paginate(:page => params[:page], :per_page => 5)
 render  :index 
 end
 def sell 
-@adverts = Advert.active
-render  :index 
-end
-def sell_in 
-@adverts = Advert.inactive
+@adverts = Advert.sell.paginate(:page => params[:page], :per_page => 5)
 render  :index 
 end
 def hire 
-@adverts = Advert.active
-render  :index 
-end
-def hire_in 
-@adverts = Advert.inactive
+@adverts = Advert.hire.paginate(:page => params[:page], :per_page => 5)
 render  :index 
 end
 def exchange 
-@adverts = Advert.active
-render  :index 
-end
-def exchange_in 
-@adverts = Advert.inactive
+@adverts = Advert.exchange.paginate(:page => params[:page], :per_page => 5)
 render  :index 
 end
 
@@ -121,6 +101,6 @@ end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def advert_params
-      params.require(:advert).permit(:title, :description, :name, :surname, :email, :mobile, :date, :active, :address, :image, comments_attributes: [:name,:content,:advert_id,:_destroy])
+      params.require(:advert).permit(:job_hunt,:hire,:buy,:sell,:exchange,:title, :description, :name, :surname, :email, :mobile, :date, :active, :address, :image, comments_attributes: [:name,:content,:advert_id,:_destroy])
     end
 end

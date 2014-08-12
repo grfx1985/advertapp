@@ -10,6 +10,35 @@
     <div class="controls">
       <%= f.text_area :description, :class => 'text_area' %>
     </div>
+        <br> Let us know if this AD is active</br>
+    <br></br>
+    <div class="control-group">
+      <%= f.label :active, :class => 'control-label' %>
+
+      <div class="controls">
+        <%= f.check_box :active, :class => 'check_box' %>
+      </div>
+    </div>
+    <br></br>
+    <ul>
+    <div class="control-group", "controls"> Category, please choose: 
+    <br></br>
+    <li>Looking for a job?<br><%= f.check_box :job_hunt, :class => 'check_box' %></br></li>
+    <br></br>
+    <li>Looking for a Employee ?
+    <br><%= f.check_box :hire, :class => 'check_box' %></br></li>
+    <br></br>
+    <li>Looking to buy ?
+    <br><%= f.check_box :buy, :class => 'check_box' %></br></li>
+    <br></br>
+    <li>Looking to sell ? 
+    <br><%= f.check_box :sell, :class => 'check_box' %></br></li>
+    <br></br>
+    <li>Looking to Exchange/Swap ? 
+    <br><%= f.check_box :exchange, :class => 'check_box' %></br></li>
+    </ul></br>
+    <br></br>
+    </div>
     <div class="control-group">
       <%= f.label :image, :class => 'control-label' %>
       <div class="controls">
@@ -52,12 +81,7 @@
         <%= f.date_select :date, :class => 'date_select' %>
       </div>
     </div>
-    <div class="control-group">
-      <%= f.label :active, :class => 'control-label' %>
-      <div class="controls">
-        <%= f.check_box :active, :class => 'check_box' %>
-      </div>
-    </div>
+
         <br><%= image_tag "http://maps.google.com/maps/api/staticmap?size=1900x1000&sensor=true&zoom=14&markers=#{@advert.latitude},#{@advert.longitude}" %></br>
   <div class="form-actions">
     <%= f.submit nil, :class => 'btn btn-primary' %>
