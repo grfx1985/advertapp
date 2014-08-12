@@ -1,14 +1,62 @@
 class AdvertsController < ApplicationController
   before_action :authenticate_admin! , only: [:new ,:edit, :update, :destroy]
   before_action :set_advert, only: [:show, :edit, :update, :destroy]
-  http_basic_authenticate_with name: "Master", password: "secret", only: :moderate
-
-def moderate
+  
+def active 
+@adverts = Advert.active
+render  :index 
 end
+def inactive 
+@adverts = Advert.inactive
+render  :index 
+end
+def job_hunt 
+@adverts = Advert.active
+render  :index 
+end
+def job_hunt_in 
+@adverts = Advert.inactive
+render  :index 
+end
+def buy 
+@adverts = Advert.active
+render  :index 
+end
+def buy_in 
+@adverts = Advert.inactive
+render  :index 
+end
+def sell 
+@adverts = Advert.active
+render  :index 
+end
+def sell_in 
+@adverts = Advert.inactive
+render  :index 
+end
+def hire 
+@adverts = Advert.active
+render  :index 
+end
+def hire_in 
+@adverts = Advert.inactive
+render  :index 
+end
+def exchange 
+@adverts = Advert.active
+render  :index 
+end
+def exchange_in 
+@adverts = Advert.inactive
+render  :index 
+end
+
+
   # GET /adverts
   # GET /adverts.json
   def index
     @adverts = Advert.paginate(:page => params[:page], :per_page => 5)
+
   end
 
   # GET /adverts/1
@@ -28,7 +76,7 @@ end
   # POST /adverts
   # POST /adverts.json
   def create
-    @advert = current_admin.adverts.create( advert_params )
+    @advert = current_admin.adverts.create(advert_params)
 
     respond_to do |format|
       if @advert.save

@@ -1,10 +1,25 @@
 Rails.application.routes.draw do
   resources :comments
 
- mount RailsAdmin::Engine => '/admins/moderate', as: 'rails_admin'
+  mount RailsAdmin::Engine => '/admins/moderate', as: 'rails_admin'
   devise_for :admins
-  resources :adverts 
-
+  resources :adverts do
+    collection do
+      get 'active'
+      get 'inactive'
+      get 'job_hunt'
+      get 'job_hunt_in'
+      get 'buy_sell'
+      get 'buy_in'
+      get 'sell'
+      get 'sell_in'
+      get 'hire'
+      get 'hire_in'
+      get 'exchange'
+      get 'exchange_in'
+    end
+  end
+  resources :admins 
   get '/' => 'adverts#index'
   root to: 'adverts#index'
   # The priority is based upon order of creation: first created -> highest priority.

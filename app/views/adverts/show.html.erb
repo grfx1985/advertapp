@@ -45,3 +45,6 @@
 
               <% end %>
 </div> 
+
+
+<%= render partial: 'comments/form', locals: {comment: Comment.new(advert_id: @advert.id)} %>
