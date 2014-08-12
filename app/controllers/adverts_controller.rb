@@ -100,6 +100,6 @@ end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def advert_params
-      params.require(:advert).permit(:job_hunt,:hire,:buy,:sell,:exchange,:title, :description, :name, :surname, :email, :mobile, :date, :active, :address, :image, comments_attributes: [:name,:content,:advert_id,:_destroy])
+      params.require(:advert).permit(:job_hunt, :hire, :buy, :sell, :exchange, :title, :description, :name, :surname, :email, :mobile, :date, :active, :address, :image, :image1, :image2, :image3,   comments_attributes: [:name,:content,:advert_id,:_destroy])
     end
 end

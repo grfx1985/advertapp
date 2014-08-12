@@ -10,10 +10,27 @@
   <dd><%= @advert.description %></dd>
     <dt><strong><%= model_class.human_attribute_name(:active) %>:</strong></dt>
   <dd><%= @advert.active %></dd>
-  <br><dt><strong><%= model_class.human_attribute_name(:image) %>:</strong></dt></br>
+
+ <div><br><dt><strong><%= model_class.human_attribute_name(:image) %>:</strong></dt></br>
  <br><%= image_tag @advert.image.url(:medium) %></br>
- <br><%= link_to 'Original Image' , @advert.image.url %></br>
- <br><dt><strong><%= model_class.human_attribute_name(:job_hunt) %>:</strong></dt>
+ <br><%= link_to 'Original Image' , @advert.image.url %></br></div>
+
+
+
+ <div><br><dt><strong><%= model_class.human_attribute_name(:image1) %>:</strong></dt></br>
+ <br><%= image_tag @advert.image1.url(:medium) %></br>
+ <br><%= link_to 'Original Image' , @advert.image1.url %></br></div>
+
+
+ <div><br><dt><strong><%= model_class.human_attribute_name(:image2) %>:</strong></dt></br>
+ <br><%= image_tag @advert.image2.url(:medium) %></br>
+ <br><%= link_to 'Original Image' , @advert.image2.url %></br></div>
+
+ <div><br><dt><strong><%= model_class.human_attribute_name(:image3) %>:</strong></dt></br>
+ <br><%= image_tag @advert.image3.url(:medium) %></br>
+ <br><%= link_to 'Original Image' , @advert.image3.url %></br></div>
+
+  <br><dt><strong><%= model_class.human_attribute_name(:job_hunt) %>:</strong></dt>
   <dd><%= @advert.job_hunt %></dd>
  <dt><strong><%= model_class.human_attribute_name(:hire) %>:</strong></dt>
   <dd><%= @advert.hire %></dd>
