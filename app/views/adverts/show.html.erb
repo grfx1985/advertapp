@@ -57,6 +57,7 @@
 <div class="form-actions">
   <%= link_to t('.back', :default => t("helpers.links.back")),
               adverts_path, :class => 'btn btn-info'  %>
+  <%= link_to("PDF",advert_path(@advert,format: :pdf), method: 'get', :class => ["btn btn btn"]) %>
      <% if is_my_advert?(@advert) %>
   <%= link_to t('.edit', :default => t("helpers.links.edit")),
               edit_advert_path(@advert), :class => 'btn btn-success' %>
