@@ -1,35 +1,35 @@
 class AdvertsController < ApplicationController
   before_action :authenticate_admin! , only: [:new ,:edit, :update, :destroy]
   before_action :set_advert, only: [:show, :edit, :update, :destroy]
-  
-def active 
-@adverts = Advert.active.paginate(:page => params[:page], :per_page => 5)
-render  :index 
-end
-def inactive 
-@adverts = Advert.inactive.paginate(:page => params[:page], :per_page => 5)
-render  :index 
-end
-def job_hunt 
-@adverts = Advert.job_hunt.paginate(:page => params[:page], :per_page => 5)
-render  :index 
-end
-def buy 
-@adverts = Advert.buy.paginate(:page => params[:page], :per_page => 5)
-render  :index 
-end
-def sell 
-@adverts = Advert.sell.paginate(:page => params[:page], :per_page => 5)
-render  :index 
-end
-def hire 
-@adverts = Advert.hire.paginate(:page => params[:page], :per_page => 5)
-render  :index 
-end
-def exchange 
-@adverts = Advert.exchange.paginate(:page => params[:page], :per_page => 5)
-render  :index 
-end
+
+  def active
+    @adverts = Advert.active.paginate(:page => params[:page], :per_page => 5)
+    render  :index
+  end
+  def inactive
+    @adverts = Advert.inactive.paginate(:page => params[:page], :per_page => 5)
+    render  :index
+  end
+  def job_hunt
+    @adverts = Advert.job_hunt.paginate(:page => params[:page], :per_page => 5)
+    render  :index
+  end
+  def buy
+    @adverts = Advert.buy.paginate(:page => params[:page], :per_page => 5)
+    render  :index
+  end
+  def sell
+    @adverts = Advert.sell.paginate(:page => params[:page], :per_page => 5)
+    render  :index
+  end
+  def hire
+    @adverts = Advert.hire.paginate(:page => params[:page], :per_page => 5)
+    render  :index
+  end
+  def exchange
+    @adverts = Advert.exchange.paginate(:page => params[:page], :per_page => 5)
+    render  :index
+  end
 
 
   # GET /adverts
@@ -41,6 +41,18 @@ end
   # GET /adverts/1
   # GET /adverts/1.json
   def show
+
+    @advert = Advert.find(params[:id])
+ 
+    respond_to do |format|
+      format.html
+      format.pdf do
+        pdf = ReportPdf.new(@advert)
+        send_data pdf.render, filename: 'report.pdf', type: 'application/pdf'
+
+      end
+
+    end
   end
 
   # GET /adverts/new
@@ -93,13 +105,13 @@ end
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_advert
-      @advert = Advert.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_advert
+    @advert = Advert.find(params[:id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def advert_params
-      params.require(:advert).permit(:job_hunt, :hire, :buy, :sell, :exchange, :title, :description, :name, :surname, :email, :mobile, :date, :active, :address, :image, :image1, :image2, :image3,   comments_attributes: [:name,:content,:advert_id,:_destroy])
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def advert_params
+    params.require(:advert).permit(:job_hunt, :hire, :buy, :sell, :exchange, :title, :description, :name, :surname, :email, :mobile, :date, :active, :address, :image, :image1, :image2, :image3,   comments_attributes: [:name,:content,:advert_id,:_destroy])
+  end
 end
